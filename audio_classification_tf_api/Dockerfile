@@ -5,6 +5,7 @@ WORKDIR /app
 
 COPY requirements/requirements.txt .
 
+RUN apt-get update && apt-get -y install gcc
 RUN apt-get -y update && \
     addgroup --gid 1001 --system app && \
     adduser --no-create-home --shell /bin/false --disabled-password --uid 1001 --system --group app && \
